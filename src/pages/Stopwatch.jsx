@@ -36,18 +36,24 @@ const Stopwatch = () => {
   };
 
   return (
-    <div>
-      <div className="stopwatch-container">
-        <p className="stopwatch-time">
+    <div className="flex justify-center mt-5">
+      <div className="flex flex-col items-center mt-5">
+        <p className="border px-10 py-5 text-5xl font-extralight">
           {hours}:{minutes.toString().padStart(2, "0")}:
           {seconds.toString().padStart(2, "0")}:
           {milliseconds.toString().padStart(2, "0")}
         </p>
-        <div className="stopwatch-buttons">
-          <button className="stopwatch-button" onClick={startAndStop}>
+        <div className="flex gap-10 mt-5">
+          <button
+            className="bg-orange-300 px-4 py-1 rounded-lg text-white"
+            onClick={startAndStop}
+          >
             {isRunning ? "Stop" : "Start"}
           </button>
-          <button className="stopwatch-button" onClick={reset}>
+          <button
+            className="bg-orange-300 px-4 py-1 rounded-lg text-white"
+            onClick={reset}
+          >
             Reset
           </button>
         </div>
